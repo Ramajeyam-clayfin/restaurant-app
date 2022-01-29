@@ -1,13 +1,26 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './Components/Dashboard';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-     <h1>Restaurant Management Application</h1> 
+     
+      <Routes>  
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard/>}/>
+      </Routes>
      
     </div>
   );
 }
 
-export default App;
+function Home() {
+  return (
+    <>
+        <h1>Restaurant Management Application</h1> 
+    </>
+  );
+}
+
