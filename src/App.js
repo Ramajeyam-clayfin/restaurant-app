@@ -2,7 +2,12 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Dashboard from './Components/Dashboard';
+import Orders from './Components/Orders';
+import Menu from './Components/Menu';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
+
+
 
 export default function App() {
   return (
@@ -10,8 +15,11 @@ export default function App() {
      
       <Routes>  
         <Route path='/' element={<Layout/>}>
-            <Route index element={<Dashboard/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}>
+            <Route index element={<Menu/>}/>
+            <Route path='/dashboard/orders' element={<Orders/>}/>
           </Route>
+        </Route>
       </Routes>
      
     </div>
