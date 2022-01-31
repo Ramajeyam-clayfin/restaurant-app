@@ -33,7 +33,7 @@ export const DataProvider = (props) =>{
     }, 
     {
         dishId : 4,
-        dishName : 'Lemon Juice With Red Berries',
+        dishName : 'Lemon Juice',
         dishImg : lemon_juice,
         dishPrice: 15,
         status: 'In Queue'

@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import {Datas} from './Context';
-import {Link} from 'react-router-dom'; 
 import {Button} from 'react-bootstrap';
 
 export default function Orders() {
@@ -13,8 +12,6 @@ export default function Orders() {
 
     return(
         <div>
-            <Link to='/dashboard'><Button>Menu</Button></Link><br/><br/>
-           
             <div>
                 {orders.length ? orders.map((e, index) => (
                     <div key={index}>
