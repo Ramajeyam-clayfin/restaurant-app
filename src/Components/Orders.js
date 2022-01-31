@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 export default function Orders(){
-    const {orders} = useContext(Datas);
+    const {orders, status} = useContext(Datas);
     return(
         <div>
             <Link to='/dashboard'><Button>Menu</Button></Link><br/><br/>
@@ -12,9 +12,9 @@ export default function Orders(){
             <div>
                 {orders.length ? orders.map((e, index) => (
                     <div key={index}>
-                        {e.dishId}.&nbsp;&nbsp;
-                        <img src={e.dishImg} style={{height: 50}} alt='' />
-                        <p>Dish Name : {e.dishName}</p>
+                        <img src={e.dishImg} alt='' style={{height: 50, minWidth:50}}/>
+                        <p>{index+1}. {e.dishName}</p>
+                       Status :  <b>{status}</b>
                         <br/><br/>  
                     </div>
                 ))

@@ -5,11 +5,23 @@ import { Link, Outlet} from 'react-router-dom';
 
 export default function Menu(){
     const {dishes, setOrders, orders} = useContext(Datas);
+    
 
     const Orderdish = (e, id) =>{
         e.preventDefault();
-        let push = dishes.filter(x => x.dishId === id );
-        setOrders([push,...orders] );
+        let push = dishes.find( ({dishId}) => dishId === id );
+        const updateUsers = [
+            ...orders,
+            {
+              dishId: push.dishId,
+              dishName: push.dishName,
+              dishImg: push.dishImg,
+              dishPrice: push.dishPrice,
+            }
+          ];
+        
+        console.log(push);
+        setOrders(updateUsers);
         console.log(orders);
         alert(`${push.dishName} is added to Orders`);
     }
@@ -22,7 +34,7 @@ export default function Menu(){
                     <div key={index}>
                         <img src={s.dishImg} style={{height: 200, minWidth:300}} alt=''/>
                         <h4>Dish Name : {s.dishName}</h4>
-                        <b>Price : {s.dishPrice}</b><br/>
+                        <b>Price : ₹ {s.dishPrice}</b><br/>
                         <Button onClick={(e)=>Orderdish(e, s.dishId)}>Order Dish</Button>
                         <br/><br/>  
                     </div>
