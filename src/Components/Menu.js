@@ -19,6 +19,7 @@ export default function Menu(){
               dishImg: push.dishImg,
               dishPrice: push.dishPrice,
               status: push.status,
+              no: push.no,
             }
           ];
         

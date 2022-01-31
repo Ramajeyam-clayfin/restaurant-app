@@ -9,7 +9,7 @@ export default function Dashboard(){
         {/* <h2>Dashboard Page</h2> */}
         <Navbar bg="primary" variant="dark">
             <Container>
-                <NavbarBrand>Dashboard Page</NavbarBrand>
+                <NavbarBrand>Dashboard</NavbarBrand>
                 <Nav className="me-auto">
                     <Link to='/dashboard'><Button>Menu</Button></Link> &nbsp;&nbsp;
                     <Link to='/dashboard/orders'><Button>Orders</Button></Link>
