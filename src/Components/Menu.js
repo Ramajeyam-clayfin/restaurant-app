@@ -23,9 +23,7 @@ export default function Menu(){
             }
           ];
         
-        console.log(push);
         setOrders(updateUsers);
-        console.log(orders);
         alert(`${push.dishName} is added to Orders`);
     }
     return (
@@ -38,7 +36,7 @@ export default function Menu(){
                                 <Card.Img  variant="top" src={s.dishImg} style={{height:250}} alt=''/>
                                 <Card.Body>
                                     <Card.Title>{s.dishName}</Card.Title>
-                                    <Card.Text>Price : ₹ {s.dishPrice}</Card.Text><br/>
+                                    <Card.Text>Price : ₹ {s.dishPrice}</Card.Text>
                                     <Button onClick={(e)=>Orderdish(e, s.dishId)}>Order Dish</Button>  
                                 </Card.Body>
                             </Card>

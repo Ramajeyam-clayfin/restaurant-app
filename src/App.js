@@ -5,6 +5,7 @@ import Orderstatus from './Kitchen/Orderstatus';
 import Dashboard from './Components/Dashboard';
 import Orders from './Components/Orders';
 import Menu from './Components/Menu';
+import Display from './Customer/Display'; 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
 
@@ -21,6 +22,7 @@ export default function App() {
             <Route path='/dashboard/orders' element={<Orders/>}/>
           </Route>
           <Route path='/kitchen' element={<Orderstatus/>} />
+          <Route path='/customer/display' element={<Display/>} />
         </Route>
       </Routes>
      
