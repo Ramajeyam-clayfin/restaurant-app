@@ -9,49 +9,54 @@ import noodles from '../Images/noodles.jpg';
 export const Datas = createContext();
 
 export const DataProvider = (props) =>{
-    const [status, setStatus] = useState('In Queue');
     const [orders, setOrders] = useState([]);
     const [dishes, setDishes] = useState([ {
         dishId : 1,
         dishName : 'Masala Dosa',
         dishImg : dosa,
         dishPrice: 20,
+        status: 'In Queue'
     }, 
     {
         dishId : 2,
         dishName : 'Idly',
         dishImg : idly,
         dishPrice: 10,
+        status: 'In Queue'
     }, 
     {
         dishId : 3,
         dishName : 'Samosa',
         dishImg : samosa,
         dishPrice: 5,
+        status: 'In Queue'
     }, 
     {
         dishId : 4,
         dishName : 'Lemon Juice With Red Berries',
         dishImg : lemon_juice,
         dishPrice: 15,
+        status: 'In Queue'
     }, 
     {
         dishId : 5,
         dishName : 'Stir Fry Noodles',
         dishImg : noodles,
         dishPrice: 50,
+        status: 'In Queue'
     }, 
     {
         dishId : 6,
         dishName : 'Pizza',
         dishImg : pizza,
         dishPrice: 150,
+        status: 'In Queue'
      },
     ]);
 
     return(
          <div>
-            <Datas.Provider value={{dishes, setDishes, orders, setOrders, status, setStatus}} >
+            <Datas.Provider value={{dishes, setDishes, orders, setOrders}} >
                 {props.children}
             </Datas.Provider>
          </div>
