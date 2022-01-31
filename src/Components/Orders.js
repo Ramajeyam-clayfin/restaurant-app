@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {Datas} from './Context';
-import {Button} from 'react-bootstrap';
+import {Button, ListGroup} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 export default function Orders() {
     const {orders, setOrders} = useContext(Datas);
@@ -14,13 +15,23 @@ export default function Orders() {
         <div>
             <div>
                 {orders.length ? orders.map((e, index) => (
+                    
                     <div key={index}>
-                        <img src={e.dishImg} alt='' style={{height: 50, minWidth:50}}/>
-                        <p>{index+1}. {e.dishName}</p>
-                       Status :  <b>{e.status}</b><br/>
-                       <Button onClick={()=>handleDelete(e.dishId)}>Cancel</Button>
-                        <br/><br/>  
+                        <ListGroup as="ol" style={{width:500, margin:'auto'}} >
+                            <ListGroup.Item
+                                as="li"
+                                className="d-flex justify-content-between align-items-start" >
+                                <div className="ms-2 me-auto">
+                                <div style={{textAlign:'start'}}><b>{index+1}</b> . {e.dishName}</div>
+                                Status :  <b>{e.status}</b>
+                                </div>
+                                <Button onClick={()=>handleDelete(e.dishId)}>Cancel</Button>
+                            </ListGroup.Item>
+                            <br/>
+                        
+                        </ListGroup>
                     </div>
+                    
                 ))
                 : ' Nothing Else Is Here' }
                 
