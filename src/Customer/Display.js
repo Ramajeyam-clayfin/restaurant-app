@@ -1,86 +1,42 @@
 import React, {useContext} from 'react';
 import {Datas} from '../Components/Context';
-import {ListGroup, Form, Button} from 'react-bootstrap';
+import { Button, Card, Container, Row, Col} from 'react-bootstrap';
+import Editdisplay from './Edit_display';
+import './edit.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 export default function Display(){
-    const {dishes, show, setShow} = useContext(Datas);
+    const { show, view, setView} = useContext(Datas);
+    const showHide = view ? "edit display-none" : "edit display-block";
 
-    const Handlesubmit=( id)=>{
-
-        if(show !== null)
-        {
-            if((show.map(a=>a.dishId)) !== id)
-            {
-                let push = dishes.find( ({dishId}) => dishId === id );
-                const updateUsers = [
-                    ...show,
-                    {
-                    dishId: push.dishId,
-                    dishName: push.dishName,
-                    dishImg: push.dishImg,
-                    dishPrice: push.dishPrice,
-                    status: push.status,
-                    no: push.no,
-                    }
-                ];
-                setShow(updateUsers);
-            }
-            else return ;
-        }
-        else {
-            let push = dishes.find( ({dishId}) => dishId === id );
-            const updateUsers = [
-                ...show,
-                {
-                dishId: push.dishId,
-                dishName: push.dishName,
-                dishImg: push.dishImg,
-                dishPrice: push.dishPrice,
-                status: push.status,
-                no: push.no,
-                }
-            ];
-            setShow(updateUsers);  
-        }
-        console.log(show);
+    const showEdit=()=>{
+        setView(true);
     }
 
     return(
         <div>
-            Customer Display Page
-            <Form >
-            {dishes.map((s, index) => (
-                    
-                    <div key={index}>
-                        <ListGroup as="ol" style={{width:500, margin:'auto'}} >
-                            <ListGroup.Item
-                                as="li"
-                                className="d-flex justify-content-between align-items-start" >
-                                <div className="ms-2 me-auto">
-                                <div style={{textAlign:'start'}}><b>{index+1}</b> . {s.dishName}</div>
-                                
-                                </div>
-                                <input
-                                type="checkbox"
-                                name={s.dishName}
-                                value={s.dishId}
-                                onClick={()=>Handlesubmit(s.dishId)}
-                                />
-                            </ListGroup.Item>
-                            <br/>
-                        </ListGroup>
-                    </div> 
-                ))}
-                <Button>Display</Button>
-                </Form>
-                <div>
-                    {show.map((t, index)=>(
-                        <>
-                        {t.dishId}. {t.dishName}<br/>
-                        </>
-                    ))}
-                </div>
+            <Editdisplay/>
+            <div className={showHide}>
+            <Button onClick={showEdit} style={{float:'right', marginRight:20}} >Edit Dish</Button><br/><br/> 
+                <h3>Today's Menu</h3><br/> 
+                <Container>
+                    <Row>
+                        {show.length ? show.map((s, index) => (
+                            <Col key={index}>
+                                <Card style={{ width: '18rem' }} className='card' >
+                                    <Card.Img  variant="top" src={s.dishImg} style={{height:250}} alt=''/>
+                                    <Card.Body>
+                                        <Card.Title>{s.dishName}</Card.Title>
+                                        <Card.Text>Price : ₹ {s.dishPrice}</Card.Text> 
+                                    </Card.Body>
+                                </Card>
+                                <br/><br/>
+                            </Col>
+                        ))
+                        :' Come Back Later ...!' }   
+                    </Row>
+                </Container> 
+            </div>
         </div>
     );
 }

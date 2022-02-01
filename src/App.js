@@ -9,8 +9,6 @@ import Display from './Customer/Display';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
 
-
-
 export default function App() {
   return (
     <div className="App">
@@ -22,7 +20,9 @@ export default function App() {
             <Route path='/dashboard/orders' element={<Orders/>}/>
           </Route>
           <Route path='/kitchen' element={<Orderstatus/>} />
-          <Route path='/customer/display' element={<Display/>} />
+          <Route path='/customer' element={<Display/>}>
+      
+          </Route>
         </Route>
       </Routes>
      

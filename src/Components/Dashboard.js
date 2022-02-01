@@ -17,8 +17,6 @@ export default function Dashboard(){
                 </Nav>
             </Container>
         </Navbar><br/><br/>
-        {/* <Link to='/dashboard'><Button>Menu</Button></Link> &nbsp;&nbsp;
-        <Link to='/dashboard/orders'><Button>Orders</Button></Link><br/><br/> */}
         <Outlet/> 
     </div>
     );
