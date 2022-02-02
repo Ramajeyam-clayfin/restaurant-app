@@ -15,7 +15,6 @@ export default function Orders() {
         <div>
             <div>
                 {orders.length ? orders.map((e, index) => (
-                    
                     <div key={index}>
                         <ListGroup as="ol" style={{width:500, margin:'auto'}} >
                             <ListGroup.Item

@@ -11,6 +11,7 @@ export const Datas = createContext();
 export const DataProvider = (props) =>{
     const [orders, setOrders] = useState([]);
     const [select, setSelect] = useState([]);
+    const [emp, setEmp] = useState([]);
     const [dishes, setDishes] = useState([ {
         dishId : 1,
         dishName : 'Masala Dosa',
@@ -65,7 +66,7 @@ export const DataProvider = (props) =>{
 
     return(
          <div>
-            <Datas.Provider value={{dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView}} >
+            <Datas.Provider value={{dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView, emp, setEmp}} >
                 {props.children}
             </Datas.Provider>
          </div>

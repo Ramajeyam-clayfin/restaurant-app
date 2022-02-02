@@ -6,6 +6,9 @@ import Dashboard from './Components/Dashboard';
 import Orders from './Components/Orders';
 import Menu from './Components/Menu';
 import Display from './Customer/Display'; 
+import Employee from './Employee/Employee';
+import Empdetails from './Employee/employeeDetails';
+import Addemployee from './Employee/newEmployee';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
 
@@ -18,6 +21,10 @@ export default function App() {
           <Route path='/dashboard' element={<Dashboard/>}>
             <Route index element={<Menu/>}/>
             <Route path='/dashboard/orders' element={<Orders/>}/>
+          </Route>
+          <Route path='/employee' element={<Employee/>} >
+            <Route index element={<Empdetails/>} />
+            <Route path='/employee/add_empoyee' element={<Addemployee/>} />
           </Route>
           <Route path='/kitchen' element={<Orderstatus/>} />
           <Route path='/customer' element={<Display/>}>

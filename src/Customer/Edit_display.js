@@ -10,7 +10,7 @@ export default function Editdisplay(){
     const showHide = view ? "edit display-block" : "edit display-none";
 
     const Checkbox = (e,index) => {
-        var chks = e.target.checked
+        let chks = e.target.checked
 
         if (chks) //when checkbox is checked
         {

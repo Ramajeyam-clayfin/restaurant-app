@@ -7,6 +7,7 @@ export default function Layout (){
         <div>
             <h1>Restaurant Management Application</h1> 
             <Link to='/dashboard'><button>Dashboard</button></Link>&nbsp;&nbsp;
+            <Link to='/employee'><button>Employee</button></Link>&nbsp;&nbsp;
             <Link to='/kitchen'><button>Kitchen</button></Link>&nbsp;&nbsp;
             <Link to='/customer'><button>Customer Display</button></Link>
             <hr/>

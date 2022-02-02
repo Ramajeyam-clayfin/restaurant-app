@@ -6,7 +6,7 @@ export default function Dashboard(){
     
     return(
     <div>
-        {/* <h2>Dashboard Page</h2> */}
+       
         <Navbar bg="primary" variant="dark">
             <Container>
                 <NavbarBrand>Dashboard</NavbarBrand>
