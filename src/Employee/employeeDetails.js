@@ -8,29 +8,29 @@ export default function Empdetails(){
 
     return(
         <div>
-            <Table striped bordered responsive>
-                <thead >
-                    <tr >
-                        <th>S.No</th>
-                        <th>Id.</th>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Join Date</th>
-                        <th>Salary</th>
-                        <th>Gender</th>
-                        <th>D.O.B</th>
-                        <th>Branch</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Address 1</th>
-                        <th>Address 2</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>ZipCode</th>
-                    </tr>
-                </thead>
-                    {emp.length ? emp.map((e, index) => (
-                        <tbody key={index}>
+            {emp.length ? emp.map((e, index) => (
+                <Table striped bordered responsive>
+                    <thead >
+                        <tr >
+                            <th>S.No</th>
+                            <th>Id.</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Join Date</th>
+                            <th>Salary</th>
+                            <th>Gender</th>
+                            <th>D.O.B</th>
+                            <th>Branch</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Address 1</th>
+                            <th>Address 2</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>ZipCode</th>
+                        </tr>
+                    </thead>
+                    <tbody key={index}>
                         <tr >
                             <td>{index+1}.</td>
                             <td>{e.empId}</td>
@@ -49,11 +49,11 @@ export default function Empdetails(){
                             <td>{e.State}</td>
                             <td>{e.Zipcode}</td>
                         </tr>
-                        </tbody>
-                    ))
-                    : <tbody>No Details..!</tbody>  
-                    } 
-            </Table>
+                    </tbody>
+                </Table>
+            ))
+            : <div><h3>No Data to Display..!</h3></div>  
+            } 
         </div>
     );
 }

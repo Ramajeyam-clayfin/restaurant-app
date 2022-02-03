@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {Datas} from '../Components/Context';
 import {Form, Col, Row, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 export default function Addemployee(){
-    const {emp, setEmp} = useContext(Datas);
-    let [values, setValues] = useState({});
+    const {values, setValues, emp, setEmp} = useContext(Datas);
 
     const Addvalue=(event)=>{
         event.preventDefault();

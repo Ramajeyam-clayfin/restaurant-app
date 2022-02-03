@@ -9,10 +9,11 @@ import noodles from '../Images/noodles.jpg';
 export const Datas = createContext();
 
 export const DataProvider = (props) =>{
-    const [orders, setOrders] = useState([]);
-    const [select, setSelect] = useState([]);
-    const [emp, setEmp] = useState([]);
-    const [dishes, setDishes] = useState([ {
+    const [orders, setOrders] = useState([]);//orders, orderstatus, 
+    const [select, setSelect] = useState([]);//customer edit menu
+    const [emp, setEmp] = useState([]); //employee details
+    const [values, setValues] = useState({}); //add new employee
+    const [dishes, setDishes] = useState([ { // menu
         dishId : 1,
         dishName : 'Masala Dosa',
         dishImg : dosa,
@@ -61,12 +62,12 @@ export const DataProvider = (props) =>{
         no:0
      },
     ]);
-    const [show, setShow] = useState([...dishes]);
-    const [view, setView] = useState(false);
+    const [show, setShow] = useState([...dishes]);//customer display menu 
+    const [view, setView] = useState(false); //customer edit menu
 
     return(
          <div>
-            <Datas.Provider value={{dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView, emp, setEmp}} >
+            <Datas.Provider value={{values, setValues, dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView, emp, setEmp}} >
                 {props.children}
             </Datas.Provider>
          </div>

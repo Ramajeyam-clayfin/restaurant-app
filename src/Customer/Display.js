@@ -17,7 +17,7 @@ export default function Display(){
         <div>
             <Editdisplay/>
             <div className={showHide}>
-            <Button onClick={showEdit} style={{float:'right', marginRight:20}} >Edit Dish</Button><br/><br/> 
+            <Button onClick={showEdit} style={{float:'right', marginRight:20}} >Edit Menu</Button><br/><br/> 
                 <h3>Today's Menu</h3><br/> 
                 <Container>
                     <Row>
