@@ -9,7 +9,7 @@ export default function Empdetails(){
     return(
         <div>
             {emp.length ? emp.map((e, index) => (
-                <Table striped bordered responsive>
+                <Table striped bordered responsive key={index}>
                     <thead >
                         <tr >
                             <th>S.No</th>
@@ -30,7 +30,7 @@ export default function Empdetails(){
                             <th>ZipCode</th>
                         </tr>
                     </thead>
-                    <tbody key={index}>
+                    <tbody >
                         <tr >
                             <td>{index+1}.</td>
                             <td>{e.empId}</td>

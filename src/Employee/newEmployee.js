@@ -6,73 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Addemployee(){
     const {values, setValues, emp, setEmp} = useContext(Datas);
 
-    const Addvalue=(event)=>{
-        event.preventDefault();
-        const {name, value} = event.target
-        
-        if(name === 'Name')
-        {
-            setValues({ ...values, empName: value});
-        }
-        else if(name === 'id')
-        {
-            setValues({ ...values, empId: value });
-        }
-        else if(name === 'Position')
-        {
-            setValues ({ ...values, empPosition: value });
-        }
-        else if(name === 'Branch')
-        {
-            setValues({ ...values, branch: value });
-        }
-        else if(name === 'Joindate')
-        {
-            setValues({ ...values, empJoindate: value });
-        }
-        else if(name === 'Salary')
-        {
-            setValues({ ...values, empSalary: value });
-        }
-        else if(name === 'gender')
-        {
-            setValues({ ...values, empGender: value });
-        }
-        else if(name === 'dob')
-        {
-            setValues ({ ...values, empDob: value });
-        }
-        else if(name === 'mob')
-        {
-            setValues ({ ...values, empMob: value });
-        }
-        else if(name === 'email')
-        {
-            setValues({ ...values, empEmail: value });
-        }
-        else if(name === 'address1')
-        {
-            setValues({ ...values, Address1: value });
-        }
-        else if(name === 'address2')
-        {
-            setValues({ ...values, Address2: value });
-        }
-        else if(name === 'City')
-        {
-            setValues({ ...values, City: value });
-        }
-        else if(name === 'state')
-        {
-            setValues({ ...values, State: value });
-        }
-        else if(name === 'zipcode')
-        {
-            setValues ({ ...values, Zipcode: value });
-        }
-        
-    }
-
     const Submitform=(event)=>{
         event.preventDefault();
 
@@ -85,7 +18,6 @@ export default function Addemployee(){
             document.querySelector("Form").reset();
             alert(`Employee is added`);  
         }
-       
     }
 
     return(
@@ -97,7 +29,8 @@ export default function Addemployee(){
                     Name :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="text" required  placeholder="Name" name="Name" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="text" required  placeholder="Name" name="Name" onChange={(e) =>
+                            setValues(values => ({ ...values, empName: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -107,7 +40,8 @@ export default function Addemployee(){
                     Employee ID :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="number" placeholder="ID" name="id"  onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="number" placeholder="ID" name="id"   onChange={(e) =>
+                            setValues(values => ({ ...values, empId: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -117,7 +51,8 @@ export default function Addemployee(){
                     Position :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Select placeholder="Choose..." name="Position" onChange={(e)=>Addvalue(e)}>
+                    <Form.Select placeholder="Choose..." name="Position" onChange={(e) =>
+                            setValues(values => ({ ...values, empPosition: e.target.value }) ) }>
                         <option>Choose...</option>
                         <option value='Waiter'>Waiter</option>
                         <option value='Chef'>Chef</option>
@@ -133,7 +68,8 @@ export default function Addemployee(){
                     Branch :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Select placeholder="Choose..." name="Branch" onChange={(e)=>Addvalue(e)}>
+                    <Form.Select placeholder="Choose..." name="Branch" onChange={(e) =>
+                            setValues(values => ({ ...values, branch: e.target.value }) ) }>
                         <option>Choose...</option>
                         <option value='Chennai'>Chennai</option>
                         <option value='Salem'>Salem</option>
@@ -149,7 +85,8 @@ export default function Addemployee(){
                     joining Date :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="date" placeholder="Joining Date" name="Joindate" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="date" placeholder="Joining Date" name="Joindate" onChange={(e) =>
+                            setValues(values => ({ ...values, empJoindate: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -159,7 +96,8 @@ export default function Addemployee(){
                     Salary :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="number" placeholder="Salary" name="Salary" onChange={(e)=>Addvalue(e)} />
+                    <Form.Control type="number" placeholder="Salary" name="Salary" onChange={(e) =>
+                            setValues(values => ({ ...values, empSalary: e.target.value }) ) } />
                     </Col>
                 </Form.Group>
 
@@ -174,14 +112,16 @@ export default function Addemployee(){
                         label="Male"
                         name="gender"
                         value='Male'
-                        onChange={(e)=>Addvalue(e)}
+                        onChange={(e) =>
+                            setValues(values => ({ ...values, empGender:  e.target.value }) ) }
                         />
                         <Form.Check
                         type="radio"
                         label="Female"
                         name="gender"
                         value='Female'
-                        onChange={(e)=>Addvalue(e)}
+                        onChange={(e) =>
+                            setValues(values => ({ ...values, empGender:  e.target.value }) ) }
                         />
                     </Col>
                 </Form.Group>
@@ -192,7 +132,8 @@ export default function Addemployee(){
                     Date Of Birth :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="date" placeholder="D.O.B" name="dob" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="date" placeholder="D.O.B" name="dob" onChange={(e) =>
+                            setValues(values => ({ ...values, empDob: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -202,7 +143,8 @@ export default function Addemployee(){
                     Mobile Number :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="number" placeholder="Mobile " name="mob" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="number" placeholder="Mobile " name="mob" onChange={(e) =>
+                            setValues(values => ({ ...values, empMob: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -212,7 +154,8 @@ export default function Addemployee(){
                     Email Id :
                     </Form.Label>
                     <Col sm={5}>
-                    <Form.Control type="mail" placeholder="Email ID" name="email" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control type="mail" placeholder="Email ID" name="email" onChange={(e) =>
+                            setValues(values => ({ ...values, empEmail: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -220,7 +163,8 @@ export default function Addemployee(){
                 <Form.Group as={Row} className="mb-3" >
                     <Form.Label  column sm={3}>Address</Form.Label>
                     <Col sm={5}>
-                    <Form.Control placeholder="1234 Main St"  name="address1" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control placeholder="1234 Main St"  name="address1" onChange={(e) =>
+                            setValues(values => ({ ...values, Address1: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -228,7 +172,8 @@ export default function Addemployee(){
                 <Form.Group as={Row} className="mb-3" >
                     <Form.Label  column sm={3}>Address 2</Form.Label>
                     <Col sm={5}>
-                    <Form.Control placeholder="Apartment, studio, or floor" name="address2" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control placeholder="Apartment, studio, or floor" name="address2" onChange={(e) =>
+                            setValues(values => ({ ...values, Address2: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -236,7 +181,8 @@ export default function Addemployee(){
                 <Form.Group as={Row} className="mb-3" >
                     <Form.Label column sm={3}>City :</Form.Label>
                     <Col sm={5}>
-                    <Form.Control placeholder="City"  name="City" onChange={(e)=>Addvalue(e)}/>
+                    <Form.Control placeholder="City"  name="City" onChange={(e) =>
+                            setValues(values => ({ ...values, City: e.target.value }) ) }/>
                     </Col>
                 </Form.Group>
 
@@ -244,7 +190,8 @@ export default function Addemployee(){
                 <Form.Group as={Row} className="mb-3" >
                     <Form.Label column sm={3}>State :</Form.Label>
                     <Col sm={5}>
-                    <Form.Select placeholder="Choose..." name="state" onChange={(e)=>Addvalue(e)}>
+                    <Form.Select placeholder="Choose..." name="state" onChange={(e) =>
+                            setValues(values => ({ ...values, State: e.target.value }) ) }>
                         <option >Choose...</option>
                         <option value='Tamil nadu' >Tamil Nadu</option>
                         <option value='Kerala' >Kerala</option>
@@ -258,7 +205,8 @@ export default function Addemployee(){
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={3}>Zip Code :</Form.Label>
                     <Col sm={5}>
-                    <Form.Control placeholder="Zip code" name="zipcode" onChange={(e)=>Addvalue(e)} />
+                    <Form.Control placeholder="Zip code" name="zipcode" onChange={(e) =>
+                            setValues(values => ({ ...values, Zipcode: e.target.value }) ) } />
                     </Col>
                 </Form.Group>
                

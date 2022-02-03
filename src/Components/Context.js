@@ -64,11 +64,12 @@ export const DataProvider = (props) =>{
     ]);
     const [show, setShow] = useState([...dishes]);//customer display menu 
     const [view, setView] = useState(false); //customer edit menu
+    const [add, setAdd] = useState(false); //kitchen add btn
     const [stocks, setStocks] = useState([]);
 
     return(
          <div>
-            <Datas.Provider value={{stocks, setStocks, values, setValues, dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView, emp, setEmp}} >
+            <Datas.Provider value={{add, setAdd, stocks, setStocks, values, setValues, dishes, setDishes, orders, setOrders, show, setShow, select, setSelect, view, setView, emp, setEmp}} >
                 {props.children}
             </Datas.Provider>
          </div>
