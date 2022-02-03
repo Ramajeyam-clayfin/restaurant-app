@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './Layout';
+import Layout from './Components/Layout';
 import Orderstatus from './Kitchen/Orderstatus';
-import Dashboard from './Components/Dashboard';
-import Orders from './Components/Orders';
-import Menu from './Components/Menu';
+import Dashboard from './Dashboard/Dashboard';
+import Orders from './Dashboard/Orders';
+import Menu from './Dashboard/Menu';
 import Display from './Customer/Display'; 
 import Employee from './Employee/Employee';
 import Empdetails from './Employee/employeeDetails';
