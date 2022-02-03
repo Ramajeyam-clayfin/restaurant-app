@@ -11,6 +11,8 @@ import Empdetails from './Employee/employeeDetails';
 import Addemployee from './Employee/newEmployee';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
+import Stockmanage from './Kitchen/Stockmanage';
+import Kitchen from './Kitchen/Kitchen';
 
 export default function App() {
   return (
@@ -18,18 +20,24 @@ export default function App() {
      
       <Routes>  
         <Route path='/' element={<Layout/>}>
+            {/* Dashboard */}
           <Route path='/dashboard' element={<Dashboard/>}>
             <Route index element={<Menu/>}/>
             <Route path='/dashboard/orders' element={<Orders/>}/>
           </Route>
+            {/* Employee */}
           <Route path='/employee' element={<Employee/>} >
             <Route index element={<Empdetails/>} />
             <Route path='/employee/add_empoyee' element={<Addemployee/>} />
           </Route>
-          <Route path='/kitchen' element={<Orderstatus/>} />
-          <Route path='/customer' element={<Display/>}>
-      
+          {/* Kitchen */}
+          <Route path='/kitchen' element={<Kitchen/>} >
+            <Route index element={<Orderstatus/>} />
+            <Route path='/kitchen/stocks' element={<Stockmanage/>} />
           </Route>
+          {/* Customer Display  */}
+          <Route path='/customer' element={<Display/>}/>
+      
         </Route>
       </Routes>
      
