@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Nav, Navbar, Container, NavDropdown} from 'react-bootstrap'; 
+import { Nav, Navbar, Container, NavDropdown} from 'react-bootstrap'; 
 import {Link, Outlet} from 'react-router-dom';
 
 
@@ -8,26 +8,32 @@ export default function Layout (){
         <div>
             <h1>Restaurant Management Application</h1> 
             
-            <Navbar bg="primary" variant="dark">
-            <Container>
-                
-                <Nav className="me-auto">
-                    <NavDropdown title="Dashboard" >
-                        <Link to='/dashboard'><NavDropdown.Item>Menu</NavDropdown.Item></Link>
-                        <Link to='/dashboard/orders'><NavDropdown.Item >Orders</NavDropdown.Item></Link>
-                        <Link to='/dashboard/stocks'><NavDropdown.Item >Stocks</NavDropdown.Item></Link>
+            <Navbar bg="primary" variant="dark" expand="lg">
+                <Container>
+                    <Navbar.Brand >Rj Restaurant</Navbar.Brand>&nbsp;&nbsp;
+                    <Nav className="me-auto">
+
+                        <NavDropdown title="Dashboard" >
+                            <NavDropdown.Item as={Link} to='/dashboard'>Menu</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/dashboard/orders'>Orders</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/dashboard/stocks'>Stocks</NavDropdown.Item>
+                        </NavDropdown>&nbsp;&nbsp;
+
+                        <NavDropdown title="Employee" >
+                            <NavDropdown.Item as={Link}to='/employee'>Details</NavDropdown.Item>
+                            <NavDropdown.Item as={Link}to='/employee/add_empoyee'>Add Employee</NavDropdown.Item> 
+                        </NavDropdown>&nbsp;&nbsp;
+
+                        <NavDropdown title="Kitchen" >
+                            <NavDropdown.Item as={Link}to='/kitchen'>Orders</NavDropdown.Item>
+                            <NavDropdown.Item as={Link}to='/kitchen/stocks'>Stocks</NavDropdown.Item>  
+                        </NavDropdown>&nbsp;&nbsp;
                         
-                    </NavDropdown>
-                     &nbsp;&nbsp;
-                    <Link to='/dashboard'><Button>Dashboard</Button></Link>&nbsp;&nbsp;
-                    <Link to='/employee'><Button>Employee</Button></Link>&nbsp;&nbsp;
-                    <Link to='/kitchen'><Button>Kitchen</Button></Link>&nbsp;&nbsp;
-                    <Link to='/customer'><Button>Customer Display</Button></Link>
-                   
-                </Nav>
-            </Container>
-        </Navbar><br/><br/>
-            <hr/>
+                        <Nav.Link as={Link} to='/customer'>Customer Menu</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
+            <br/>
             <Outlet/>
             
         </div>

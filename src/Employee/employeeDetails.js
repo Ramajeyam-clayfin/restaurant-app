@@ -8,8 +8,7 @@ export default function Empdetails(){
 
     return(
         <div>
-            {emp.length ? emp.map((e, index) => (
-                <Table striped bordered responsive key={index}>
+            <Table striped bordered responsive >
                     <thead >
                         <tr >
                             <th>S.No</th>
@@ -30,7 +29,9 @@ export default function Empdetails(){
                             <th>ZipCode</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    {emp.length ? emp.map((e, index) => (
+                
+                    <tbody key={index}>
                         <tr >
                             <td>{index+1}.</td>
                             <td>{e.empId}</td>
@@ -50,10 +51,11 @@ export default function Empdetails(){
                             <td>{e.Zipcode}</td>
                         </tr>
                     </tbody>
-                </Table>
+                
             ))
-            : <div><h3>No Data to Display..!</h3></div>  
+            : <>No Data to Display..!</>  
             } 
+            </Table>
         </div>
     );
 }
