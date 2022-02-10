@@ -17,23 +17,23 @@ export default function App() {
     <div className="App">
      
       <Routes>  
-        <Route path='/' element={<Layout/>}>
+        <Route path='/restaurant-app' element={<Layout/>}>
 
             {/* Dashboard */}
-            <Route path='/dashboard' element={<Menu/>}/>
-            <Route path='/dashboard/orders' element={<Orders/>}/>
-            <Route path='/dashboard/stocks' element={<Stocks/>}/>
+            <Route path='/restaurant-app/dashboard' element={<Menu/>}/>
+            <Route path='/restaurant-app/dashboard/orders' element={<Orders/>}/>
+            <Route path='/restaurant-app/dashboard/stocks' element={<Stocks/>}/>
 
             {/* Employee */}
-            <Route path='/employee' element={<Empdetails/>} />
-            <Route path='/employee/add_empoyee' element={<Addemployee/>} />
+            <Route path='/restaurant-app/employee' element={<Empdetails/>} />
+            <Route path='/restaurant-app/employee/add_empoyee' element={<Addemployee/>} />
           
             {/* Kitchen */}
-            <Route path='/kitchen' element={<Orderstatus/>} />
-            <Route path='/kitchen/stocks' element={<Stockmanage/>} />
+            <Route path='/restaurant-app/kitchen' element={<Orderstatus/>} />
+            <Route path='/restaurant-app/kitchen/stocks' element={<Stockmanage/>} />
 
             {/* Customer Display  */}
-            <Route path='/customer' element={<Display/>}/>
+            <Route path='/restaurant-app/customer' element={<Display/>}/>
       
         </Route>
       </Routes>

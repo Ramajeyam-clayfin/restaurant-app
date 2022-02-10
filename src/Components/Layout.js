@@ -14,22 +14,22 @@ export default function Layout (){
                     <Nav className="me-auto">
 
                         <NavDropdown title="Dashboard" >
-                            <NavDropdown.Item as={Link} to='/dashboard'>Menu</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/dashboard/orders'>Orders</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/dashboard/stocks'>Stocks</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/restaurant-app/dashboard'>Menu</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/restaurant-app/dashboard/orders'>Orders</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/restaurant-app/dashboard/stocks'>Stocks</NavDropdown.Item>
                         </NavDropdown>&nbsp;&nbsp;
 
                         <NavDropdown title="Employee" >
-                            <NavDropdown.Item as={Link}to='/employee'>Details</NavDropdown.Item>
-                            <NavDropdown.Item as={Link}to='/employee/add_empoyee'>Add Employee</NavDropdown.Item> 
+                            <NavDropdown.Item as={Link}to='/restaurant-app/employee'>Details</NavDropdown.Item>
+                            <NavDropdown.Item as={Link}to='/restaurant-app/employee/add_empoyee'>Add Employee</NavDropdown.Item> 
                         </NavDropdown>&nbsp;&nbsp;
 
                         <NavDropdown title="Kitchen" >
-                            <NavDropdown.Item as={Link}to='/kitchen'>Orders</NavDropdown.Item>
-                            <NavDropdown.Item as={Link}to='/kitchen/stocks'>Stocks</NavDropdown.Item>  
+                            <NavDropdown.Item as={Link}to='/restaurant-app/kitchen'>Orders</NavDropdown.Item>
+                            <NavDropdown.Item as={Link}to='/restaurant-app/kitchen/stocks'>Stocks</NavDropdown.Item>  
                         </NavDropdown>&nbsp;&nbsp;
                         
-                        <Nav.Link as={Link} to='/customer'>Customer Menu</Nav.Link>
+                        <Nav.Link as={Link} to='/restaurant-app/customer'>Customer Menu</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
