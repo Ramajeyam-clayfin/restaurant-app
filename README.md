@@ -1,3 +1,6 @@
+# To view the website page click here:
+https://ramajeyam-clayfin.github.io/restaurant-app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
