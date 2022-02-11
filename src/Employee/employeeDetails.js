@@ -5,6 +5,7 @@ import {Table} from 'react-bootstrap';
 
 export default function Empdetails(){
     const {emp} = useContext(Datas);
+    const empty = 'No Data to Display..!';
 
     return(
         <div>
@@ -29,10 +30,10 @@ export default function Empdetails(){
                             <th>ZipCode</th>
                         </tr>
                     </thead>
-                    {emp.length ? emp.map((e, index) => (
-                
-                    <tbody key={index}>
-                        <tr >
+                    <tbody >
+                    <React.Fragment>
+                    { emp.length ? emp.map((e, index) => (
+                        <tr key={index}>
                             <td>{index+1}.</td>
                             <td>{e.empId}</td>
                             <td>{e.empName}</td>
@@ -50,11 +51,13 @@ export default function Empdetails(){
                             <td>{e.State}</td>
                             <td>{e.Zipcode}</td>
                         </tr>
-                    </tbody>
+                    
                 
             ))
-            : <>No Data to Display..!</>  
+            : empty  
             } 
+            </React.Fragment>
+            </tbody>
             </Table>
         </div>
     );
