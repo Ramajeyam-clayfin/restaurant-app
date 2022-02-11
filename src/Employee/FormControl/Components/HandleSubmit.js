@@ -20,15 +20,11 @@ const HandleSubmit = (formControls) => {
             updatedControls[delselect[object]] = updatedFormElement;
         }
     }
-    else {
-        let newLine = '\r\n';
-        alert(
-        ` Name : ${formData.name}${newLine} Age : ${formData.age}${newLine} Email : ${formData.email}${newLine} Mobile : ${formData.mobile}${newLine} Address : ${formData.line1}, ${formData.line2}, ${formData.city}, ${formData.state}, ${formData.zipcode} - ${formData.country}${newLine} What would you use the library for : ${formData.radio}${newLine} Which sections of the library would you like access to : ${formData.checkbox}${newLine} About : ${formData.about} `
-        );
-    }
+    
     
     return{
-            updatedControls: updatedControls
+            updatedControls: updatedControls,
+            formData: formData
         }
 }
 

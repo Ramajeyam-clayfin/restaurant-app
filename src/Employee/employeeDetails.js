@@ -35,21 +35,21 @@ export default function Empdetails(){
                     { emp.length ? emp.map((e, index) => (
                         <tr key={index}>
                             <td>{index+1}.</td>
-                            <td>{e.empId}</td>
-                            <td>{e.empName}</td>
-                            <td>{e.empPosition}</td>    
-                            <td>{e.empJoindate}</td>
-                            <td>{e.empSalary}</td>
-                            <td>{e.empGender}</td>
-                            <td>{e.empDob}</td>
+                            <td>{e.empid}</td>
+                            <td>{e.name}</td>
+                            <td>{e.position}</td>    
+                            <td>{e.joindate}</td>
+                            <td>{e.salary}</td>
+                            <td>{e.gender}</td>
+                            <td>{e.dob}</td>
                             <td>{e.branch}</td>
-                            <td>{e.empMob}</td>
-                            <td>{e.empEmail}</td>
-                            <td>{e.Address1}</td>
-                            <td>{e.Address2}</td>
-                            <td>{e.City}</td>
-                            <td>{e.State}</td>
-                            <td>{e.Zipcode}</td>
+                            <td>{e.mobile}</td>
+                            <td>{e.email}</td>
+                            <td>{e.line1}</td>
+                            <td>{e.line2}</td>
+                            <td>{e.city}</td>
+                            <td>{e.state}</td>
+                            <td>{e.zipcode}</td>
                         </tr>
                     
                 

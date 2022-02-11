@@ -9,7 +9,6 @@ const Input = (props) => {
   if (props.values.touched && !props.values.valid) {
       formControl = 'form-control control-error';
   }
-//  console.log(props.values.placeholder)
 	return (  
         <div>
             <Form.Group as={Row} className="mb-3">

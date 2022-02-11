@@ -1,5 +1,5 @@
 import React, { Component }  from "react";
-
+import {Datas} from '../../Components/Context'; 
 import {initialState} from './Components/metaData';
 import ChangeHandler from './Components/changeHandler';
 import HandleSubmit from './Components/HandleSubmit';
@@ -12,8 +12,11 @@ import Buttong from './Components/Button';
 
 export default class FormControl extends Component {
 
+    static contextType = Datas
+
     constructor(props){
         super(props);
+        
         this.state = {
             formIsValid: false,
             formControls : initialState
@@ -35,6 +38,7 @@ export default class FormControl extends Component {
 
     formSubmitHandler = () => {
 
+        const context = this.context
         let submit = HandleSubmit(this.state.formControls);
 
         this.setState(
@@ -42,6 +46,18 @@ export default class FormControl extends Component {
                 formControls: submit.updatedControls
             }
         );  
+            // console.log(submit.formData)
+        let value = submit.formData;
+        const delselect =  Object.keys(value).filter((f) => value[f] === ''); 
+        
+        if(delselect.length === 0){
+            console.log(value)
+            const push = [ ...context.emp, value];
+            context.setEmp(push);
+            // document.querySelector("Form").reset();
+            alert(`Employee is added`);
+        }
+        
     }
 
     handleClearForm = () => {
