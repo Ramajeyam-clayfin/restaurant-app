@@ -6,6 +6,7 @@ import Orders from './Dashboard/Orders';
 import Menu from './Dashboard/Menu';
 import Display from './Customer/Display';
 import Empdetails from './Employee/employeeDetails';
+import Employees from './Employee/Employees';
 import Addemployee from './Employee/newEmployee';
 import Stockmanage from './Kitchen/Stockmanage';
 import Stocks from './Dashboard/Stocks';
@@ -25,7 +26,7 @@ export default function App() {
             <Route path='/restaurant-app/dashboard/stocks' element={<Stocks/>}/>
 
             {/* Employee */}
-            <Route path='/restaurant-app/employee' element={<Empdetails/>} />
+            <Route path='/restaurant-app/employee' element={<Employees/>} />
             <Route path='/restaurant-app/employee/add_empoyee' element={<Addemployee/>} />
           
             {/* Kitchen */}
