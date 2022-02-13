@@ -1,3 +1,6 @@
+import {Datas} from '../../../Components/Context'; 
+import {useContext} from 'react';
+
 const Validation = (value, rules) => {
     let isValid = true;
     let tmpErrorMsg='';
@@ -65,6 +68,16 @@ const Validation = (value, rules) => {
           
           case 'isEmail': 
               tmpisValid = emailValidator(checkval); 
+            //   console.log(tmpisValid)
+              tmpErrorMsg = !tmpisValid ? 'Invalid Email' : '' 
+            //   console.log(tmpErrorMsg)
+              isValid = isValid && tmpisValid
+              if(!tmpisValid)
+                errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)    
+          break;
+
+          case 'empid': 
+              tmpisValid = EmpidValidator(checkval); 
             //   console.log(tmpisValid)
               tmpErrorMsg = !tmpisValid ? 'Invalid Email' : '' 
             //   console.log(tmpErrorMsg)
@@ -140,5 +153,23 @@ const Validation = (value, rules) => {
         else
             return true
     }
+    
+  const EmpidValidator = value => {
+    const {emp} = useContext(Datas);
+    let id = emp.map((e, index) => e.empid)
+    console.log(id)
+    // if(updatedControls[name].value.indexOf(value) > -1)  // ckecks if checkbox value is having the same value or not using indexof array method
+    // {
+    //   newValArray = updatedControls[name].value.filter(s => s !== value) // filter and stores in newValArray except the same value that is passed 
+           
+    // } 
+    // if(value.length >0) 
+    // {
+    //     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(String(value).toLowerCase());
+    // }
+    // else
+      return true
+  }
   
 export default Validation;

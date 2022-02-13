@@ -28,6 +28,7 @@ export let initialState =   {
         validationRules: {
           minLength: 1,
           isRequired: true,
+          // empid: true,
           isNumber: true
          },
       },
@@ -260,17 +261,4 @@ export let initialState =   {
               { value: 'China', displayValue: 'China'}
             ]
           },
-
-      about: {
-        name:'about',
-        type: 'textarea',
-        title:"About : ",
-        value: '',
-        placeholder: 'Tell About Yourself...',
-        valid: false,
-        errorMsg: '',
-        touched: true,
-        validationRules: {
-        },
-      },
   };

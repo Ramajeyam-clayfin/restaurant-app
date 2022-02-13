@@ -1,5 +1,5 @@
 const HandleSubmit = (formControls) => {
-    const formData = {};
+    let formData = {};
     const touched = {};
     const updatedControls = { ...formControls }; 
     let updatedFormElement = { };
@@ -20,7 +20,7 @@ const HandleSubmit = (formControls) => {
             updatedControls[delselect[object]] = updatedFormElement;
         }
     }
-    
+    formData = {...formData , id : Date.now()}
     
     return{
             updatedControls: updatedControls,

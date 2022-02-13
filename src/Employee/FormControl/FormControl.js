@@ -4,9 +4,7 @@ import {initialState} from './Components/metaData';
 import ChangeHandler from './Components/changeHandler';
 import HandleSubmit from './Components/HandleSubmit';
 import Input from './Components/Input';
-import Textarea from './Components/Textarea';
 import Dropdown from './Components/Dropdown';
-// import Checkbox from './Components/Checkbox';
 import Radio from './Components/Radio';
 import Buttong from './Components/Button';
 
@@ -18,6 +16,7 @@ export default class FormControl extends Component {
         super(props);
         
         this.state = {
+
             formIsValid: false,
             formControls : initialState
         }
@@ -39,35 +38,47 @@ export default class FormControl extends Component {
     formSubmitHandler = () => {
 
         const context = this.context
+        let formControlsid = this.state.formControls.empid;
         let submit = HandleSubmit(this.state.formControls);
+        let value = submit.formData;
+        let update = submit.updatedControls;
+        
+        const delselect =  Object.keys(value).filter((f) => value[f] === ''); 
+        let id = context.emp.filter((e) => e.empid === value.empid)
+
+        if(id.length !== 0){
+            for(let object in update ){
+                if(object === 'empid'){
+                    formControlsid.errorMsg = `Employee ID Should be Unique !! `;
+                    formControlsid.value = '';
+                    update[object] = formControlsid;
+                }
+            }
+        }
 
         this.setState(
             {
-                formControls: submit.updatedControls
+                formControls: update
             }
         );  
-            // console.log(submit.formData)
-        let value = submit.formData;
-        const delselect =  Object.keys(value).filter((f) => value[f] === ''); 
         
-        if(delselect.length === 0){
-            console.log(value)
-            const push = [ ...context.emp, value];
+        
+        
+        if(delselect.length === 0 && id.length === 0) {
+            
+
+            const push = [ ...context.emp, value ];
             context.setEmp(push);
-            // document.querySelector("Form").reset();
             alert(`Employee is added`);
+
+            this.setState(
+                {
+                    formControls: initialState,
+                    formIsValid: false
+                }
+            );
         }
         
-    }
-
-    handleClearForm = () => {
-
-      this.setState(
-        {
-            formControls: initialState,
-            formIsValid: false
-        }
-      );
     }
 
 
@@ -106,23 +117,16 @@ export default class FormControl extends Component {
                 <Input handleChange={this.handleChange} values={this.state.formControls.zipcode} />
 
                 <Dropdown handleChange={this.handleChange} values={this.state.formControls.country} /> <br/>
-
-                <Textarea handleChange={this.handleChange} values={this.state.formControls.about} />
-
+                { /*Submit */ }
                 <Buttong 
                     action = {this.formSubmitHandler}
                     type = {'primary'} 
                     title = {'Submit'} 
                     style={buttonStyle}
                     disabled={! this.state.formIsValid}
-                /> { /*Submit */ }
+                /> 
                 
-                <Buttong
-                    action = {this.handleClearForm}
-                    type = {'secondary'}
-                    title = {'Clear'}
-                    style={buttonStyle}
-                /> {/* Clear the form */}
+                
             </div>
         );
     }

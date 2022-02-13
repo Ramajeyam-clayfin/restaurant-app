@@ -54,7 +54,7 @@ export default function Empdetails(){
                     
                 
             ))
-            : empty  
+            : <>{empty}</>  
             } 
             </React.Fragment>
             </tbody>
