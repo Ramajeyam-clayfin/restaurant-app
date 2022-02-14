@@ -1,15 +1,16 @@
 import React from 'react';
-import './formStyle.css';
-import { Form, Col, Row } from 'react-bootstrap';
+import { Form, Col, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './formStyle.css';
 
-const Input = (props) => {
-  let formControl = "form-control";
+export const Input = (props) => {
+    let formControl = "form-control";
 
-  if (props.values.touched && !props.values.valid) {
-      formControl = 'form-control control-error';
-  }
-	return (  
+    if (props.values.touched && !props.values.valid) {
+        formControl = 'form-control control-error';
+    }
+
+    return(
         <div>
             <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={3} htmlFor={props.values.name} style={{textAlign:"end"}}>
@@ -31,10 +32,6 @@ const Input = (props) => {
                     
                 </Col>
             </Form.Group>
-              
         </div>
-    )
+    );
 }
-
-export default Input;
-

@@ -1,12 +1,8 @@
-import React from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Radio = (props) => {
-
-	return( 
-        
-      
+export const Radio = props => {
+    return( 
         <div className="form-group">
             <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={3} htmlFor={props.values.name} style={{textAlign:"end"}}>
@@ -33,7 +29,4 @@ const Radio = (props) => {
             </Form.Group>
         </div>
     );
-
 }
-
-export default Radio;

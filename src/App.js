@@ -5,7 +5,6 @@ import Orderstatus from './Kitchen/Orderstatus';
 import Orders from './Dashboard/Orders';
 import Menu from './Dashboard/Menu';
 import Display from './Customer/Display';
-import Empdetails from './Employee/employeeDetails';
 import Employees from './Employee/Employees';
 import Addemployee from './Employee/newEmployee';
 import Stockmanage from './Kitchen/Stockmanage';

@@ -1,7 +1,6 @@
-import {Datas} from '../../../Components/Context'; 
-import {useContext} from 'react';
 
-const Validation = (value, rules) => {
+
+export const Validation = (value, rules) => {
     let isValid = true;
     let tmpErrorMsg='';
     let tmpisValid ;
@@ -28,9 +27,7 @@ const Validation = (value, rules) => {
       
         case 'minLength': 
             tmpisValid = minLengthValidator(checkval, rules[rule]); 
-            // console.log(tmpisValid)
-            tmpErrorMsg = !tmpisValid ? `Min Length - ${rules[rule]}` : '' 
-            // console.log(tmpErrorMsg)
+            tmpErrorMsg = !tmpisValid ? `Min Length - ${rules[rule]}` : '' ;
             isValid = isValid && tmpisValid
             if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)    
@@ -38,9 +35,7 @@ const Validation = (value, rules) => {
           
         case 'maxLength': 
               tmpisValid = maxLengthValidator(checkval, rules[rule]); 
-            //   console.log(tmpisValid)
-              tmpErrorMsg = !tmpisValid ? `Max Length - ${rules[rule]}` : '' 
-            //   console.log(tmpErrorMsg)
+              tmpErrorMsg = !tmpisValid ? `Max Length - ${rules[rule]}` : '' ;
               isValid = isValid && tmpisValid
               if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)  
@@ -48,9 +43,7 @@ const Validation = (value, rules) => {
 
           case 'isRequired': 
               tmpisValid = requiredValidator(checkval); 
-            //   console.log(tmpisValid)
-              tmpErrorMsg = !tmpisValid ? 'Mandatory Field' : '' 
-            //   console.log(tmpErrorMsg) 
+              tmpErrorMsg = !tmpisValid ? 'Mandatory Field' : '' ;
               isValid = isValid && tmpisValid
               if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)  
@@ -58,9 +51,7 @@ const Validation = (value, rules) => {
 
           case 'isNumber': 
               tmpisValid = numberValidator(checkval); 
-            //   console.log(tmpisValid)
-              tmpErrorMsg = !tmpisValid ? 'Numeric Field' : ''   
-            //   console.log(tmpErrorMsg)
+              tmpErrorMsg = !tmpisValid ? 'Numeric Field' : ''  ;
               isValid = isValid && tmpisValid
               if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)  
@@ -68,9 +59,7 @@ const Validation = (value, rules) => {
           
           case 'isEmail': 
               tmpisValid = emailValidator(checkval); 
-            //   console.log(tmpisValid)
-              tmpErrorMsg = !tmpisValid ? 'Invalid Email' : '' 
-            //   console.log(tmpErrorMsg)
+              tmpErrorMsg = !tmpisValid ? 'Invalid Email' : '' ;
               isValid = isValid && tmpisValid
               if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)    
@@ -78,9 +67,7 @@ const Validation = (value, rules) => {
 
           case 'empid': 
               tmpisValid = EmpidValidator(checkval); 
-            //   console.log(tmpisValid)
-              tmpErrorMsg = !tmpisValid ? 'Invalid Email' : '' 
-            //   console.log(tmpErrorMsg)
+              tmpErrorMsg = !tmpisValid ? 'Invalid Employee ID' : '' ;
               isValid = isValid && tmpisValid
               if(!tmpisValid)
                 errorMsg = setErrorMsg(errorMsg,tmpErrorMsg)    
@@ -155,9 +142,9 @@ const Validation = (value, rules) => {
     }
     
   const EmpidValidator = value => {
-    const {emp} = useContext(Datas);
-    let id = emp.map((e, index) => e.empid)
-    console.log(id)
+    // const {emp} = useContext(Datas);
+    // let id = emp.map((e, index) => e.empid)
+    // console.log(id)
     // if(updatedControls[name].value.indexOf(value) > -1)  // ckecks if checkbox value is having the same value or not using indexof array method
     // {
     //   newValArray = updatedControls[name].value.filter(s => s !== value) // filter and stores in newValArray except the same value that is passed 
@@ -170,6 +157,4 @@ const Validation = (value, rules) => {
     // }
     // else
       return true
-  }
-  
-export default Validation;
+}

@@ -1,13 +1,13 @@
-const HandleSubmit = (formControls) => {
+export const HandleSubmit = allInfo => {
     let formData = {};
     const touched = {};
-    const updatedControls = { ...formControls }; 
+    const updatedControls = { ...allInfo }; 
     let updatedFormElement = { };
 
-    for (let formElementId in formControls) 
+    for (let formElementId in allInfo) 
     {
-        touched[formElementId] = formControls[formElementId].touched;
-        formData[formElementId] = formControls[formElementId].value; // in formData{} stores only values of each datas
+        touched[formElementId] = allInfo[formElementId].touched;
+        formData[formElementId] = allInfo[formElementId].value; // in formData{} stores only values of each datas
     }
 
     const delselect =  Object.keys(touched).filter((f) => touched[f] === false); 
@@ -27,5 +27,3 @@ const HandleSubmit = (formControls) => {
             formData: formData
         }
 }
-
-export default HandleSubmit;

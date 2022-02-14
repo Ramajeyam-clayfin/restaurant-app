@@ -1,9 +1,9 @@
-import Validation from './Validation';
+import {Validation} from './Validation';
 
-const changeHandler =(event, formControls) => {
-    
+
+export const ChangeHandler = (event, allInfo) => {
     const name = event.target.name;
-    const updatedControls = { ...formControls }; //all values in formcontrols
+    const updatedControls = { ...allInfo }; //all values in formcontrols
     const updatedFormElement = { ...updatedControls[name] }; // in formcontrols stores only the value where the change is happened
     let value; //used to store the values of where the change is happened
     let selectedOptions; //used to store the values of where the change is happened
@@ -69,9 +69,5 @@ const changeHandler =(event, formControls) => {
     return  {
         updatedControls: updatedControls, 
         formIsValid: formIsValid
-    }  
-  
-
+    }
 }
-
-export default changeHandler;

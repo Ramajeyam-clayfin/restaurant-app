@@ -1,45 +1,42 @@
-import React, { Component }  from "react";
-import {Datas} from '../../Components/Context'; 
+import React, {Component} from 'react';
 import {initialState} from './Components/metaData';
-import ChangeHandler from './Components/changeHandler';
-import HandleSubmit from './Components/HandleSubmit';
-import Input from './Components/Input';
-import Dropdown from './Components/Dropdown';
-import Radio from './Components/Radio';
-import Buttong from './Components/Button';
+import {ChangeHandler} from './Components/ChangeHandler';
+import {HandleSubmit} from './Components/HandleSubmit';
+import {Input} from './Components/Inputs/Input';
+import {Dropdown} from './Components/Inputs/Dropdown';
+import {Radio} from './Components/Inputs/Radio';
+import {Buttons} from './Components/Inputs/Buttons';
+import {Datas} from '../../Components/Context';
+
 
 export default class FormControl extends Component {
-
     static contextType = Datas
 
     constructor(props){
         super(props);
-        
         this.state = {
 
-            formIsValid: false,
-            formControls : initialState
+            Valid: false,
+            allInfo: initialState
         }
     }
-    
 
-    handleChange = (event) => {
-        let change = ChangeHandler(event, this.state.formControls);
+    handleChange = event => {
+        let change = ChangeHandler(event, this.state.allInfo);
 
         this.setState(
             {
-                formControls: change.updatedControls, 
-                formIsValid: change.formIsValid
+                allInfo: change.updatedControls, 
+                Valid: change.formIsValid
             }
         );
- 
     }
 
     formSubmitHandler = () => {
 
         const context = this.context
-        let formControlsid = this.state.formControls.empid;
-        let submit = HandleSubmit(this.state.formControls);
+        let formControlsid = this.state.allInfo.empid;
+        let submit = HandleSubmit(this.state.allInfo);
         let value = submit.formData;
         let update = submit.updatedControls;
         
@@ -58,7 +55,7 @@ export default class FormControl extends Component {
 
         this.setState(
             {
-                formControls: update
+                allInfo: update
             }
         );  
         
@@ -66,15 +63,14 @@ export default class FormControl extends Component {
         
         if(delselect.length === 0 && id.length === 0) {
             
-
             const push = [ ...context.emp, value ];
             context.setEmp(push);
             alert(`Employee is added`);
 
             this.setState(
                 {
-                    formControls: initialState,
-                    formIsValid: false
+                    allInfo: initialState,
+                    Valid: false
                 }
             );
         }
@@ -83,55 +79,48 @@ export default class FormControl extends Component {
 
 
     render() {
-        return(
+        return (
             <div>
-                {/* Name Field */}
-                <Input handleChange={this.handleChange} values={this.state.formControls.name} /> 
+                <Input handleChange={this.handleChange} values={this.state.allInfo.name} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.empid} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.empid} />
 
-                <Dropdown handleChange={this.handleChange} values={this.state.formControls.position} /> 
+                <Dropdown handleChange={this.handleChange} values={this.state.allInfo.position} />
 
-                <Dropdown handleChange={this.handleChange} values={this.state.formControls.branch} /> 
+                <Dropdown handleChange={this.handleChange} values={this.state.allInfo.branch} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.joindate} /> 
+                <Input handleChange={this.handleChange} values={this.state.allInfo.joindate} /> 
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.salary} /> 
+                <Input handleChange={this.handleChange} values={this.state.allInfo.salary} />
 
-                <Radio handleChange={this.handleChange} values={this.state.formControls.gender} /> 
+                <Radio handleChange={this.handleChange} values={this.state.allInfo.gender} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.dob} /> 
+                <Input handleChange={this.handleChange} values={this.state.allInfo.dob} /> 
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.email} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.email} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.mobile} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.mobile} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.line1} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.line1} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.line2} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.line2} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.city} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.city} />
 
-                <Dropdown handleChange={this.handleChange} values={this.state.formControls.state} />
+                <Dropdown handleChange={this.handleChange} values={this.state.allInfo.state} />
 
-                <Input handleChange={this.handleChange} values={this.state.formControls.zipcode} />
+                <Input handleChange={this.handleChange} values={this.state.allInfo.zipcode} />
 
-                <Dropdown handleChange={this.handleChange} values={this.state.formControls.country} /> <br/>
-                { /*Submit */ }
-                <Buttong 
+                <Dropdown handleChange={this.handleChange} values={this.state.allInfo.country} /> <br/>
+
+                <Buttons 
                     action = {this.formSubmitHandler}
                     type = {'primary'} 
                     title = {'Submit'} 
-                    style={buttonStyle}
-                    disabled={! this.state.formIsValid}
+                    style={{margin : '10px 10px 10px 10px'}}
                 /> 
-                
-                
+
             </div>
         );
     }
 }
-
-const buttonStyle = {
-    margin : '10px 10px 10px 10px'
-  }

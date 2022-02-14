@@ -1,10 +1,7 @@
-import React from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-const Dropdown = (props) => {
+export const Dropdown = (props) => {
     let formControl = "";
 
     if (props.values.touched && !props.values.valid) 
@@ -46,7 +43,4 @@ const Dropdown = (props) => {
 			</Form.Group>
 		</div>
 	)
-}	
-
-
-export default Dropdown;
+}

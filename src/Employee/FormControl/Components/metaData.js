@@ -1,7 +1,7 @@
-export let initialState =   {
-        
+export let initialState = {
+
     name : { 
-      name:'name',
+        name:'name',
         type: 'text',
         title:"Name : ",
         value: '',
@@ -10,13 +10,13 @@ export let initialState =   {
         errorMsg: '',
         touched: false,
         validationRules: {
-          minLength: 4,
-          maxLength: 20,
-          isRequired: true,
-         },
-      },
+            minLength: 4,
+            maxLength: 20,
+            isRequired: true,
+        },
+    },
 
-      empid : {  
+    empid : {  
         name:'empid',
         type: 'number',
         title:"Employee ID : ",
@@ -30,10 +30,10 @@ export let initialState =   {
           isRequired: true,
           // empid: true,
           isNumber: true
-         },
-      },
+        },
+    },
 
-      position: {
+    position: {
         name:'position',
         type: 'select',
         title:"Position : ",
@@ -42,18 +42,18 @@ export let initialState =   {
         valid: false,
         errorMsg: '',
         touched: false,
-         validationRules: {
+        validationRules: {
           isRequired: true,
         },
-         options: [
+        options: [
           { value: 'Waiter', displayValue: 'Waiter' },
           { value: 'Chef', displayValue: 'Chef'},
           { value: 'Cashier', displayValue: 'Cashier'},
           { value: 'Cook', displayValue: 'Cook'}
         ]
-      },
+    },
 
-      branch: {
+    branch: {
         name:'branch',
         type: 'select',
         title:"Branch : ",
@@ -62,18 +62,18 @@ export let initialState =   {
         valid: false,
         errorMsg: '',
         touched: false,
-         validationRules: {
+        validationRules: {
           isRequired: true,
         },
-         options: [
+        options: [
           { value: 'Chennai', displayValue: 'Chennai' },
           { value: 'Salem', displayValue: 'Salem'},
           { value: 'Pondicherry', displayValue: 'Pondicherry'},
           { value: 'coimbatore', displayValue: 'coimbatore'}
         ]
-      },
+    },
 
-      joindate : {  
+    joindate : {  
         name:'joindate',
         type: 'date',
         title:"joining Date : ",
@@ -84,10 +84,10 @@ export let initialState =   {
         touched: false,
         validationRules: {
           isRequired: true,
-         },
-      },
+        },
+    },
 
-      salary : {  
+    salary : {  
         name:'salary',
         type: 'number',
         title:"Salary : ",
@@ -97,14 +97,13 @@ export let initialState =   {
         errorMsg: '',
         touched: false,
         validationRules: {
-          minLength: 3,
+          minLength: 4,
           isRequired: true,
           isNumber: true
-         },
-      },
+        },
+    },
 
-
-      gender: {
+    gender: {
         name:'gender',
         type: 'radio',
         title:"Gender : ",
@@ -120,9 +119,9 @@ export let initialState =   {
           { value: 'Male', displayValue: 'Male' },
           { value: 'Female', displayValue: 'Female'}
         ]
-      },
+    },
 
-      dob : {  
+    dob : {  
         name:'dob',
         type: 'date',
         title:"D.O.B : ",
@@ -134,9 +133,9 @@ export let initialState =   {
         validationRules: {
           isRequired: true,
          },
-      },
+    },
 
-      email: {
+    email: {
         name:'email',
         type: 'text',
         title:"Email : ",
@@ -149,9 +148,9 @@ export let initialState =   {
           isRequired: true,
           isEmail: true
         },
-      },
+    },
 
-      mobile : {  
+    mobile : {  
         name:'mobile',
         type: 'number',
         title:"Mobile : ",
@@ -166,99 +165,104 @@ export let initialState =   {
           isRequired: true,
           isNumber: true
         },
-      },
+    },
 
-        line1: {
-          name:'line1',
-            type: 'text',
-            title:"Address : ",
-            value: '',
-            placeholder: 'Address Line 1',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
-                minLength: 2,
-                isRequired: true
-            }
-        },
-        line2: {
-          name:'line2',
-            type: 'text',
-            title:"",
-            value: '',
-            placeholder: 'Address Line 2',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
+    line1: {
+        name:'line1',
+        type: 'text',
+        title:"Address : ",
+        value: '',
+        placeholder: 'Address Line 1',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
+            minLength: 2,
+            isRequired: true
+        }
+    },
+
+    line2: {
+        name:'line2',
+        type: 'text',
+        title:"",
+        value: '',
+        placeholder: 'Address Line 2',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
             minLength: 4,
             isRequired: true
-            }
+        }
+    },
+
+    city: {
+        name:'city',
+        type: 'text',
+        title:"",
+        value: '',
+        placeholder: 'City',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
+            minLength: 4,
+            isRequired: true
+        }
+    }, 
+
+    state: {
+        name:'state',
+        type: 'select',
+        title:"",
+        value: '',
+        placeholder: 'State',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
+            isRequired: true
         },
-        city: {
-          name:'city',
-            type: 'text',
-            title:"",
-            value: '',
-            placeholder: 'City',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
-                minLength: 4,
-                isRequired: true
-            }
+        options: [
+            { value: 'Tamil Nadu', displayValue: 'Tamil Nadu' },
+            { value: 'Kerala', displayValue: 'Kerala'},
+            { value: 'Pondicherry', displayValue: 'Pondicherry'},
+            { value: 'Karnataka', displayValue: 'Karnataka'}
+        ]
+    },
+
+    zipcode: {
+        name:'zipcode',
+        type: 'number',
+        title:" ",
+        value: '',
+        placeholder: 'Zipcode',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
+            minLength: 6,
+            isRequired: true
+        }
+    },
+
+    country: {
+        name:'country',
+        type: 'select',
+        title:"Country : ",
+        value: '',
+        placeholder: 'Country',
+        valid: false,
+        errorMsg: '',
+        touched: false,
+        validationRules: {
+            isRequired: true,
         },
-        state: {
-          name:'state',
-            type: 'select',
-            title:"",
-            value: '',
-            placeholder: 'State',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
-                isRequired: true
-            },
-            options: [
-              { value: 'Tamil Nadu', displayValue: 'Tamil Nadu' },
-              { value: 'Kerala', displayValue: 'Kerala'},
-              { value: 'Pondicherry', displayValue: 'Pondicherry'},
-              { value: 'Karnataka', displayValue: 'Karnataka'}
-            ]
-        },
-        zipcode: {
-          name:'zipcode',
-            type: 'number',
-            title:" ",
-            value: '',
-            placeholder: 'Zipcode',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
-                minLength: 6,
-                isRequired: true
-            }
-        },
-        country: {
-          name:'country',
-            type: 'select',
-            title:"Country : ",
-            value: '',
-            placeholder: 'Country',
-            valid: false,
-            errorMsg: '',
-            touched: false,
-            validationRules: {
-              isRequired: true,
-            },
-            options: [
-              { value: 'India', displayValue: 'India' },
-              { value: 'Australia', displayValue: 'Australia'},
-              { value: 'China', displayValue: 'China'}
-            ]
-          },
-  };
+        options: [
+            { value: 'India', displayValue: 'India' },
+            { value: 'Australia', displayValue: 'Australia'},
+            { value: 'China', displayValue: 'China'}
+        ]
+    },
+}
