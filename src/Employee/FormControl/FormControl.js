@@ -47,7 +47,7 @@ export default class FormControl extends Component {
             for(let object in update ){
                 if(object === 'empid'){
                     formControlsid.errorMsg = `Employee ID Should be Unique !! `;
-                    formControlsid.value = '';
+                    // formControlsid.value = '';
                     update[object] = formControlsid;
                 }
             }

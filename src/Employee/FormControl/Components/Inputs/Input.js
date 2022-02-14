@@ -22,6 +22,7 @@ export const Input = (props) => {
                         id={props.values.name}
                         value={props.values.value}
                         type={props.values.type}
+                        focus={props.values.focus}
                         placeholder={props.values.placeholder}
                         name={props.values.name}
                         onChange={props.handleChange}

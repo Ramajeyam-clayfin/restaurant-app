@@ -1,6 +1,6 @@
 export const employeeData = [
     {
-        name:"rirani",
+        name:"Rirani",
         empid: "10",
         position : "Cashier",
         branch : "Pondicherry",
@@ -20,7 +20,7 @@ export const employeeData = [
     },
 
     {
-        name:"devid Rome",
+        name:"Devid Rome",
         empid: "12",
         position : "Cook",
         branch : "coimbatore",
@@ -40,7 +40,7 @@ export const employeeData = [
     },
 
     {
-        name:"tin jonsi",
+        name:"Tin jonsi",
         empid: "14",
         position : "Chef",
         branch : "Salem",
@@ -60,7 +60,7 @@ export const employeeData = [
     },
 
     {
-        name:"krish Lee",
+        name:"Krish Lee",
         empid: "16",
         position : "Waiter",
         branch : "Chennai",

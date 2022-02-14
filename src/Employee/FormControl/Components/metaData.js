@@ -3,6 +3,7 @@ export let initialState = {
     name : { 
         name:'name',
         type: 'text',
+        focus: true,
         title:"Name : ",
         value: '',
         placeholder: '',
@@ -19,6 +20,7 @@ export let initialState = {
     empid : {  
         name:'empid',
         type: 'number',
+        focus: false,
         title:"Employee ID : ",
         value: '',
         placeholder: '',
@@ -90,6 +92,7 @@ export let initialState = {
     salary : {  
         name:'salary',
         type: 'number',
+        focus: false,
         title:"Salary : ",
         value: '',
         placeholder: '',
@@ -137,6 +140,7 @@ export let initialState = {
 
     email: {
         name:'email',
+        focus: false,
         type: 'text',
         title:"Email : ",
         value: '',
@@ -153,6 +157,7 @@ export let initialState = {
     mobile : {  
         name:'mobile',
         type: 'number',
+        focus: false,
         title:"Mobile : ",
         value: '',
         placeholder: 'Enter Your Mobile Number',
@@ -170,6 +175,7 @@ export let initialState = {
     line1: {
         name:'line1',
         type: 'text',
+        focus: false,
         title:"Address : ",
         value: '',
         placeholder: 'Address Line 1',
@@ -185,6 +191,7 @@ export let initialState = {
     line2: {
         name:'line2',
         type: 'text',
+        focus: false,
         title:"",
         value: '',
         placeholder: 'Address Line 2',
@@ -200,6 +207,7 @@ export let initialState = {
     city: {
         name:'city',
         type: 'text',
+        focus: false,
         title:"",
         value: '',
         placeholder: 'City',
@@ -235,6 +243,7 @@ export let initialState = {
     zipcode: {
         name:'zipcode',
         type: 'number',
+        focus: false,
         title:" ",
         value: '',
         placeholder: 'Zipcode',

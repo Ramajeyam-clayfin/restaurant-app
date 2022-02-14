@@ -10,7 +10,7 @@ export const Radio = props => {
                 </Form.Label>
                 {props.values.options.map((option,index) => {
                     return (
-                        <Col sm={2} key={index} className="radio-inline" style={{textAlign:"start"}}>
+                        <Col sm={2} key={index}  style={{textAlign:"start"}}>
                             <Form.Check
                                 id = {props.values.name}
                                 name={props.values.name}
