@@ -5,13 +5,14 @@ import idly from '../Images/idly.jpg';
 import samosa from '../Images/samosa.jpg';
 import lemon_juice from '../Images/lemon-juice.jpg';
 import noodles from '../Images/noodles.jpg';
+import {employeeData} from './employeemetaData';
 
 export const Datas = createContext();
 
 export const DataProvider = (props) =>{
     const [orders, setOrders] = useState([]);//orders, orderstatus, 
     const [select, setSelect] = useState([]);//customer edit menu
-    const [emp, setEmp] = useState([]); //employee details
+    const [emp, setEmp] = useState([...employeeData]); //employee details
     const [values, setValues] = useState({}); //add new employee
     const [dishes, setDishes] = useState([ { // menu
         dishId : 1,

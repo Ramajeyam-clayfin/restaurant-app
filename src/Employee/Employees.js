@@ -9,16 +9,14 @@ import './edit.css';
 export default function Employees(){
     const {emp} = useContext(Datas);
     const [view, setView] = useState(false);
-    // const [Id, setId] = useState('');
-    let details;
+    const [details, setDetails] = useState([]);
     const showHide = view ? "edit display-none" : "edit display-block";
     const Hideshow = view ? "edit display-block" : "edit display-none";
 
     const showEdit=(id)=>{
+       
+        setDetails (emp.filter(s => s.id === id));
         setView(true);
-        // setId(id);
-        details = emp.filter(s => s.id === id);
-        console.log(details)
 
     }
 
@@ -44,21 +42,36 @@ export default function Employees(){
                     </Row>
                 </Container>
             </div>
+
             <div className={Hideshow}>
-            <Button onClick={()=> setView(false)}>Back</Button>
-            {emp.map((s, index) => (
-                <Col style={{float:'left', textAlign:'left'}}>
-                    <Row> <FormLabel >Name : {s.name}</FormLabel> </Row>
-                    <Row> <FormLabel>Employee ID : {s.empid}</FormLabel> </Row>
-                    <Row> <FormLabel>Designation : {s.position}</FormLabel> </Row>
-                    <Row> <FormLabel>Gender : {s.gender}</FormLabel> </Row>
-                    <Row> <FormLabel>Date Of Birth : {s.dob}</FormLabel> </Row>
-                    <Row> <FormLabel>Branch : {s.branch}</FormLabel> </Row>
-                    <Row> <FormLabel>Mobile : {s.mobile}</FormLabel> </Row>
-                    <Row> <FormLabel>Email : {s.email}</FormLabel> </Row>
-                    <Row> <FormLabel>Address : <br/> {s.line1}<br/> {s.line2}<br/> {s.city}<br/> {s.state} - {s.zipcode}</FormLabel> </Row>
-                    <Row> <FormLabel>Joining Date : {s.joindate}</FormLabel> </Row>
-                    <Row> <FormLabel>Salary : ₹ {s.salary}</FormLabel> </Row>
+            <Button onClick={()=> setView(false)}  style={{float:'left', marginLeft:20}}>Back</Button><br/><br/>
+
+            <Col sm={3} style={{float:'left', textAlign:"end", fontWeight:'bold', borderleft:'10px', fontSize: '20px' }}>
+                    <Row> <FormLabel >Name : </FormLabel> </Row>
+                    <Row> <FormLabel>Employee ID : </FormLabel> </Row>
+                    <Row> <FormLabel>Designation : </FormLabel> </Row>
+                    <Row> <FormLabel>Gender : </FormLabel> </Row>
+                    <Row> <FormLabel>Date Of Birth : </FormLabel> </Row>
+                    <Row> <FormLabel>Branch : </FormLabel> </Row>
+                    <Row> <FormLabel>Mobile :</FormLabel> </Row>
+                    <Row> <FormLabel>Email : </FormLabel> </Row>
+                    <Row> <FormLabel>Address : </FormLabel> </Row><br/><br/><br/>
+                    <Row> <FormLabel>Joining Date : </FormLabel> </Row>
+                    <Row> <FormLabel>Salary : </FormLabel> </Row>
+            </Col> 
+            {details.map((s, index) => (
+                <Col sm={7} style={{float:'left', textAlign:'left', fontWeight:'bold', fontSize: '20px'}} key={index} >
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.name}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.empid}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.position}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.gender}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.dob}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.branch}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.mobile}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.email}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.line1}<br/>&nbsp;&nbsp; {s.line2}<br/>&nbsp;&nbsp; {s.city}<br/>&nbsp;&nbsp; {s.state} - {s.zipcode}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;{s.joindate}</FormLabel> </Row>
+                    <Row> <FormLabel>&nbsp;&nbsp;₹ {s.salary}</FormLabel> </Row><br/> <br/> <br/>
                 </Col>
             ))}
             </div>

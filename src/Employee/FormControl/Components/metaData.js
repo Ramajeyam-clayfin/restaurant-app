@@ -262,7 +262,8 @@ export let initialState = {
         options: [
             { value: 'India', displayValue: 'India' },
             { value: 'Australia', displayValue: 'Australia'},
-            { value: 'China', displayValue: 'China'}
+            { value: 'China', displayValue: 'China'},
+            { value: 'USA', displayValue: 'USA'}
         ]
     },
 }
