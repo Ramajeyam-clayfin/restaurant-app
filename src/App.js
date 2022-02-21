@@ -9,6 +9,7 @@ import Employees from './Employee/Employees';
 import Addemployee from './Employee/newEmployee';
 import Stockmanage from './Kitchen/Stockmanage';
 import Stocks from './Dashboard/Stocks';
+import Main from './OnlineOrder/Main'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './App.css';
 
@@ -34,6 +35,9 @@ export default function App() {
 
             {/* Customer Display  */}
             <Route path='/restaurant-app/customer' element={<Display/>}/>
+
+            {/* Online Order */}
+            <Route path='/restaurant-app/homepage' element={<Main/>}/>
       
         </Route>
       </Routes>

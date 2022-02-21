@@ -30,6 +30,8 @@ export default function Layout (){
                         </NavDropdown>&nbsp;&nbsp;
                         
                         <Nav.Link as={Link} to='/restaurant-app/customer'>Customer Menu</Nav.Link>
+
+                        <Nav.Link as={Link} to='/restaurant-app/homepage'>Online Order</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
